@@ -5,15 +5,19 @@ import { tours } from '../data/tours';
 
 export default function Tours() {
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6">
+    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
-        title="Best Medellín Tours & Experiences | Emilio's Tours"
-        description="Explore our full range of Medellín tours. From the vibrant Comuna 13 to the breathtaking Guatapé and El Peñol. Book your unforgettable Colombian adventure today."
-        keywords="Medellín tours, Comuna 13 tour, Guatapé tour, Pablo Escobar tour Medellín, coffee tour Medellín, private tours Medellín, Medellín city tour"
+        title="Los Mejores Tours y Experiencias en Medellín | Emilio's Tours"
+        description="Explora nuestra gama completa de tours en Medellín. Desde la vibrante Comuna 13 hasta el impresionante Guatapé y El Peñol. Reserva tu inolvidable aventura colombiana hoy."
+        keywords="Tours en Medellín, Comuna 13 tour, Guatapé tour, Pablo Escobar tour Medellín, tour cafetero Medellín, tours privados Medellín, city tour Medellín"
         url="https://emiliostours.com/medellin-tours"
       />
 
-      <div className="max-w-7xl mx-auto">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-vine/10 rounded-full blur-[100px] -z-10"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -21,10 +25,10 @@ export default function Tours() {
           className="text-center mb-20"
         >
           <h1 className="font-display text-5xl md:text-7xl text-coffee-dark font-bold mb-6">
-            Discover Medellín
+            Descubre Medellín
           </h1>
           <p className="font-sans text-xl text-coffee/80 max-w-3xl mx-auto leading-relaxed">
-            Browse our carefully curated selection of the best tours in Medellín. Whether you're looking for history, nature, culture, or a private tailored experience, we have the perfect journey for you.
+            Explora nuestra cuidadosa selección de los mejores tours en Medellín. Ya sea que busques historia, naturaleza, cultura o una experiencia privada a medida, tenemos el viaje perfecto para ti.
           </p>
         </motion.div>
 
@@ -36,26 +40,27 @@ export default function Tours() {
 
         {/* SEO Content Section */}
         <motion.section 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 max-w-4xl mx-auto prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
+          transition={{ duration: 1 }}
+          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
         >
-          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">Why Book a Tour in Medellín?</h2>
-          <p className="text-coffee/80 mb-6">
-            Medellín, Colombia, often referred to as the "City of Eternal Spring," is a vibrant metropolis nestled in the Aburrá Valley. Over the past two decades, it has undergone a miraculous transformation, becoming one of South America's most innovative and exciting destinations.
+          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">¿Por qué reservar un tour en Medellín?</h2>
+          <p className="text-coffee/80 mb-6 font-light">
+            Medellín, Colombia, a menudo conocida como la "Ciudad de la Eterna Primavera", es una metrópolis vibrante enclavada en el Valle de Aburrá. En las últimas dos décadas, ha experimentado una transformación milagrosa, convirtiéndose en uno de los destinos más innovadores y emocionantes de Sudamérica.
           </p>
-          <p className="text-coffee/80 mb-6">
-            Our <strong>Medellín tours</strong> are designed to showcase the city's incredible resilience, stunning landscapes, and warm culture. From exploring the colorful streets on our <strong>Comuna 13 tour</strong> to climbing the massive rock on our <strong>Guatapé tour</strong>, every experience is crafted to leave you with unforgettable memories.
+          <p className="text-coffee/80 mb-6 font-light">
+            Nuestros <strong>tours en Medellín</strong> están diseñados para mostrar la increíble resiliencia de la ciudad, sus impresionantes paisajes y su cálida cultura. Desde explorar las coloridas calles en nuestro <strong>tour a la Comuna 13</strong> hasta escalar la enorme roca en nuestro <strong>tour a Guatapé</strong>, cada experiencia está diseñada para dejarte recuerdos inolvidables.
           </p>
-          <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Popular Tour Options</h3>
-          <ul className="list-disc pl-6 space-y-4 text-coffee/80">
-            <li><strong>Comuna 13 Tour:</strong> Witness the power of art and community in what was once the city's most dangerous neighborhood.</li>
-            <li><strong>Guatapé Tour:</strong> A full-day excursion to the colorful town of Guatapé and the iconic El Peñol rock.</li>
-            <li><strong>Pablo Escobar Tour Medellín:</strong> A historical, objective look at the city's dark past and its incredible recovery.</li>
-            <li><strong>Coffee Tour Medellín:</strong> Experience the rich tradition of Colombian coffee making in the lush mountains of Antioquia.</li>
-            <li><strong>Private Tours Medellín:</strong> Tailor-made experiences for those who want a personalized itinerary and dedicated guide.</li>
-            <li><strong>Medellín City Tour:</strong> The perfect introduction to the city's main attractions, including Plaza Botero and the Metrocable.</li>
+          <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Opciones de Tours Populares</h3>
+          <ul className="list-disc pl-6 space-y-4 text-coffee/80 font-light">
+            <li><strong>Tour Comuna 13:</strong> Sé testigo del poder del arte y la comunidad en lo que alguna vez fue el barrio más peligroso de la ciudad.</li>
+            <li><strong>Tour a Guatapé:</strong> Una excursión de día completo al colorido pueblo de Guatapé y la icónica piedra de El Peñol.</li>
+            <li><strong>Tour Pablo Escobar Medellín:</strong> Una mirada histórica y objetiva al oscuro pasado de la ciudad y su increíble recuperación.</li>
+            <li><strong>Tour Cafetero Medellín:</strong> Experimenta la rica tradición de la elaboración del café colombiano en las exuberantes montañas de Antioquia.</li>
+            <li><strong>Tours Privados Medellín:</strong> Experiencias hechas a medida para aquellos que desean un itinerario personalizado y un guía dedicado.</li>
+            <li><strong>City Tour Medellín:</strong> La introducción perfecta a las principales atracciones de la ciudad, incluyendo la Plaza Botero y el Metrocable.</li>
           </ul>
         </motion.section>
       </div>

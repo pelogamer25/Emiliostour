@@ -28,9 +28,22 @@ export default function Home() {
   return (
     <div ref={containerRef} className="relative min-h-screen">
       <SEO 
-        title="Emilio's Tours | Best Tours in Medellín, Colombia"
-        description="Experience the magic of Medellín with Emilio's Tours. We offer the best Comuna 13, Guatapé, and private city tours. More than tours, we sell dreams."
-        keywords="Medellín tours, best tours Medellín, Comuna 13 tour, Guatapé tour, private tours Medellín, things to do in Medellín"
+        title="Emilio's Tours | Los Mejores Tours en Medellín, Colombia"
+        description="Experimenta la magia de Medellín con Emilio's Tours. Ofrecemos los mejores tours a la Comuna 13, Guatapé y tours privados por la ciudad. Más que tours, vendemos sueños."
+        keywords="Tours en Medellín, mejores tours Medellín, Comuna 13 tour, Guatapé tour, tour privado Medellín, qué hacer en Medellín"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "TourAgency",
+          "name": "Emilio's Tours",
+          "description": "Experiencia turística galardonada en Medellín, Colombia.",
+          "url": "https://emiliostours.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Medellín",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
+          }
+        }}
       />
 
       {/* Continuous Animated Background */}
@@ -60,7 +73,7 @@ export default function Home() {
         >
           <img 
             src="https://picsum.photos/seed/medellin-hero/1920/1080" 
-            alt="Medellín Cityscape" 
+            alt="Paisaje de Medellín" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -95,9 +108,9 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="font-display text-6xl md:text-8xl lg:text-9xl text-white font-bold mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-tight"
           >
-            More Than Tours.<br/>
+            Más Que Tours.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral via-gold to-sand drop-shadow-none">
-              We Sell Dreams.
+              Vendemos Sueños.
             </span>
           </motion.h1>
           
@@ -107,7 +120,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="font-sans text-xl md:text-3xl text-sand/90 mb-12 max-w-3xl mx-auto drop-shadow-lg font-light"
           >
-            Discover the heart of Medellín, Colombia. Unforgettable experiences crafted by passionate local experts.
+            Descubre el corazón de Medellín, Colombia. Experiencias inolvidables creadas por apasionados expertos locales.
           </motion.p>
 
           <motion.div
@@ -119,7 +132,7 @@ export default function Home() {
               to="/medellin-tours"
               className="inline-block glass bg-coral/80 text-white px-12 py-5 rounded-full uppercase tracking-[0.2em] font-bold hover:bg-coral transition-all duration-500 hover:scale-110 shadow-[0_0_40px_rgba(255,142,101,0.6)] relative overflow-hidden group"
             >
-              <span className="relative z-10">Explore Medellín</span>
+              <span className="relative z-10">Explorar Medellín</span>
               <div className="absolute inset-0 bg-gradient-to-r from-coral-light to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Link>
           </motion.div>
@@ -131,7 +144,7 @@ export default function Home() {
           transition={{ duration: 2.5, repeat: Infinity }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-sand/80 flex flex-col items-center gap-3"
         >
-          <span className="font-sans text-xs uppercase tracking-[0.3em] font-bold">Scroll to discover</span>
+          <span className="font-sans text-xs uppercase tracking-[0.3em] font-bold">Desliza para descubrir</span>
           <div className="w-px h-16 bg-gradient-to-b from-coral via-gold to-transparent"></div>
         </motion.div>
       </motion.section>
@@ -150,23 +163,23 @@ export default function Home() {
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-vine via-coral to-gold opacity-50"></div>
             
             <h2 className="font-display text-4xl md:text-6xl text-coffee-dark font-bold mb-8 drop-shadow-sm">
-              Welcome to the City of Eternal Spring
+              Bienvenidos a la Ciudad de la Eterna Primavera
             </h2>
             <p className="font-sans text-xl md:text-2xl text-coffee/80 leading-relaxed mb-12 font-light">
-              Emilio's Tours is your premier gateway to experiencing the true essence of Medellín and Antioquia. We believe that travel is not just about seeing places, but feeling them. From the vibrant street art of Comuna 13 to the breathtaking views of Guatapé, our expert guides bring the history, culture, and soul of Colombia to life.
+              Emilio's Tours es tu principal puerta de entrada para experimentar la verdadera esencia de Medellín y Antioquia. Creemos que viajar no se trata solo de ver lugares, sino de sentirlos. Desde el vibrante arte callejero de la Comuna 13 hasta las impresionantes vistas de Guatapé, nuestros guías expertos dan vida a la historia, la cultura y el alma de Colombia.
             </p>
             <div className="flex flex-wrap justify-center gap-12 mt-12">
               <div className="flex flex-col items-center gap-4 group">
                 <div className="w-20 h-20 rounded-full glass bg-coral/20 flex items-center justify-center text-coral group-hover:scale-110 group-hover:bg-coral/30 transition-all duration-500">
                   <Star className="w-10 h-10" />
                 </div>
-                <span className="font-sans font-bold text-coffee-dark tracking-wider uppercase text-sm">5-Star Rated</span>
+                <span className="font-sans font-bold text-coffee-dark tracking-wider uppercase text-sm">5 Estrellas</span>
               </div>
               <div className="flex flex-col items-center gap-4 group">
                 <div className="w-20 h-20 rounded-full glass bg-vine/20 flex items-center justify-center text-vine group-hover:scale-110 group-hover:bg-vine/30 transition-all duration-500">
                   <MapPin className="w-10 h-10" />
                 </div>
-                <span className="font-sans font-bold text-coffee-dark tracking-wider uppercase text-sm">Local Experts</span>
+                <span className="font-sans font-bold text-coffee-dark tracking-wider uppercase text-sm">Expertos Locales</span>
               </div>
             </div>
           </motion.div>
@@ -184,10 +197,10 @@ export default function Home() {
             className="text-center mb-20"
           >
             <h2 className="font-display text-5xl md:text-7xl text-coffee-dark font-bold mb-6 drop-shadow-sm">
-              Our Signature Experiences
+              Nuestras Experiencias Exclusivas
             </h2>
             <p className="font-sans text-coffee/70 text-xl md:text-2xl max-w-3xl mx-auto font-light">
-              Carefully curated journeys designed to immerse you in the beauty, history, and culture of Medellín.
+              Viajes cuidadosamente diseñados para sumergirte en la belleza, historia y cultura de Medellín.
             </p>
           </motion.div>
 
@@ -208,7 +221,7 @@ export default function Home() {
               to="/medellin-tours"
               className="inline-block glass bg-white/50 border-2 border-coral text-coral px-10 py-4 rounded-full uppercase tracking-widest font-bold hover:bg-coral hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,142,101,0.4)]"
             >
-              View All Tours
+              Ver Todos los Tours
             </Link>
           </motion.div>
         </div>
@@ -223,13 +236,13 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto glass bg-white/30 p-12 md:p-16 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
         >
-          <h2 className="text-4xl font-bold text-coffee-dark mb-6">Why Choose Emilio's Tours in Medellín?</h2>
+          <h2 className="text-4xl font-bold text-coffee-dark mb-6">¿Por qué elegir Emilio's Tours en Medellín?</h2>
           <p className="text-coffee/80 mb-4 font-light text-xl leading-relaxed">
-            When searching for the <strong>best tours in Medellín</strong>, travelers look for authenticity, safety, and deep local knowledge. At Emilio's Tours, we pride ourselves on offering the most comprehensive and engaging <strong>Medellín city tours</strong> available.
+            Al buscar los <strong>mejores tours en Medellín</strong>, los viajeros buscan autenticidad, seguridad y un profundo conocimiento local. En Emilio's Tours, nos enorgullecemos de ofrecer los <strong>city tours en Medellín</strong> más completos y atractivos disponibles.
           </p>
-          <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Top Things to Do in Medellín</h3>
+          <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Las Mejores Cosas para Hacer en Medellín</h3>
           <p className="text-coffee/80 mb-4 font-light text-xl leading-relaxed">
-            Whether you are interested in the inspiring transformation seen on our <strong>Comuna 13 tour</strong>, the breathtaking landscapes of the <strong>Guatapé tour</strong>, or understanding the complex history through our <strong>Pablo Escobar tour Medellín</strong>, we have an experience tailored for you. We also offer exclusive <strong>coffee tours in Medellín</strong> and fully customizable <strong>private tours</strong> for those seeking a VIP experience.
+            Ya sea que estés interesado en la inspiradora transformación que se ve en nuestro <strong>tour a la Comuna 13</strong>, los impresionantes paisajes del <strong>tour a Guatapé</strong>, o en comprender la compleja historia a través de nuestro <strong>tour de Pablo Escobar en Medellín</strong>, tenemos una experiencia diseñada para ti. También ofrecemos exclusivos <strong>tours cafeteros en Medellín</strong> y <strong>tours privados</strong> totalmente personalizables para aquellos que buscan una experiencia VIP.
           </p>
         </motion.div>
       </section>

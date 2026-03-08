@@ -4,38 +4,38 @@ import { Link } from 'react-router-dom';
 
 const activities = [
   {
-    title: "Ride the Metrocable",
-    description: "Medellín's innovative public transport system offers breathtaking panoramic views of the city nestled in the Aburrá Valley. It's an essential experience for any visitor.",
+    title: "Viajar en el Metrocable",
+    description: "El innovador sistema de transporte público de Medellín ofrece impresionantes vistas panorámicas de la ciudad enclavada en el Valle de Aburrá. Es una experiencia esencial para cualquier visitante.",
     image: "https://picsum.photos/seed/metrocable/800/600",
     link: "/medellin-city-tour"
   },
   {
-    title: "Explore Comuna 13",
-    description: "Once considered dangerous, this neighborhood is now a vibrant hub of street art, hip-hop culture, and community resilience. The outdoor escalators are a marvel of urban planning.",
+    title: "Explorar la Comuna 13",
+    description: "Alguna vez considerado peligroso, este vecindario es ahora un vibrante centro de arte callejero, cultura hip-hop y resiliencia comunitaria. Las escaleras mecánicas al aire libre son una maravilla de la planificación urbana.",
     image: "https://picsum.photos/seed/comuna13art/800/600",
     link: "/comuna-13-tour"
   },
   {
-    title: "Visit Plaza Botero",
-    description: "Located in the heart of downtown, this plaza features 23 larger-than-life bronze sculptures donated by Medellín's most famous artist, Fernando Botero.",
+    title: "Visitar la Plaza Botero",
+    description: "Ubicada en el corazón del centro de la ciudad, esta plaza cuenta con 23 esculturas de bronce más grandes que la vida real donadas por el artista más famoso de Medellín, Fernando Botero.",
     image: "https://picsum.photos/seed/botero/800/600",
     link: "/medellin-city-tour"
   },
   {
-    title: "Day Trip to Guatapé",
-    description: "Just two hours away, climb the massive El Peñol rock for incredible views of the man-made lakes, then wander the colorful, zócalo-adorned streets of Guatapé town.",
+    title: "Excursión de un Día a Guatapé",
+    description: "A solo dos horas de distancia, sube la enorme piedra de El Peñol para disfrutar de increíbles vistas de los lagos artificiales, luego pasea por las coloridas calles adornadas con zócalos del pueblo de Guatapé.",
     image: "https://picsum.photos/seed/guatapetown/800/600",
     link: "/guatape-tour"
   },
   {
-    title: "Discover Colombian Coffee",
-    description: "Antioquia is a premier coffee-growing region. Visit a traditional finca (farm) to learn about the entire process from bean to cup, and taste some of the world's best coffee.",
+    title: "Descubrir el Café Colombiano",
+    description: "Antioquia es una de las principales regiones productoras de café. Visita una finca tradicional para aprender sobre todo el proceso, desde el grano hasta la taza, y prueba uno de los mejores cafés del mundo.",
     image: "https://picsum.photos/seed/coffeefarm/800/600",
     link: "/coffee-tour-medellin"
   },
   {
-    title: "Experience the Nightlife in El Poblado",
-    description: "Medellín is famous for its vibrant nightlife. Head to Parque Lleras or Provenza in El Poblado for incredible restaurants, rooftop bars, and salsa clubs.",
+    title: "Experimentar la Vida Nocturna en El Poblado",
+    description: "Medellín es famosa por su vibrante vida nocturna. Dirígete al Parque Lleras o Provenza en El Poblado para disfrutar de increíbles restaurantes, bares en azoteas y clubes de salsa.",
     image: "https://picsum.photos/seed/poblado/800/600",
     link: "/private-tours-medellin"
   }
@@ -45,14 +45,15 @@ export default function ThingsToDo() {
   return (
     <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
-        title="Things to Do in Medellín | Top Attractions & Tours"
-        description="Discover the best things to do in Medellín, Colombia. From riding the Metrocable and exploring Comuna 13 to day trips to Guatapé and coffee farms."
-        keywords="things to do in Medellín, Medellín attractions, what to do in Medellín, Medellín city tour, Comuna 13, Guatapé"
+        title="Qué Hacer en Medellín | Principales Atracciones y Tours"
+        description="Descubre las mejores cosas para hacer en Medellín, Colombia. Desde viajar en el Metrocable y explorar la Comuna 13 hasta excursiones de un día a Guatapé y fincas cafeteras."
+        keywords="qué hacer en Medellín, atracciones en Medellín, city tour Medellín, Comuna 13, Guatapé"
         url="https://emiliostours.com/things-to-do-medellin"
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-b from-sand/50 to-transparent -z-10"></div>
+      <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-gradient-to-b from-coral/10 to-transparent rounded-full blur-[150px] -z-10 animate-blob mix-blend-multiply"></div>
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[120px] -z-10 animate-blob animation-delay-4000 mix-blend-multiply"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
@@ -62,10 +63,10 @@ export default function ThingsToDo() {
           className="text-center mb-20"
         >
           <h1 className="font-display text-5xl md:text-7xl text-coffee-dark font-bold mb-6">
-            Things to Do in Medellín
+            Qué Hacer en Medellín
           </h1>
-          <p className="font-sans text-xl text-coffee/80 max-w-3xl mx-auto leading-relaxed">
-            The City of Eternal Spring offers an incredible array of experiences. Whether you're an adventure seeker, a history buff, or a foodie, here are our top recommendations for your visit.
+          <p className="font-sans text-xl text-coffee/80 max-w-3xl mx-auto leading-relaxed font-light">
+            La Ciudad de la Eterna Primavera ofrece una increíble variedad de experiencias. Ya seas un buscador de aventuras, un aficionado a la historia o un amante de la comida, aquí están nuestras principales recomendaciones para tu visita.
           </p>
         </motion.div>
 
@@ -77,7 +78,7 @@ export default function ThingsToDo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group glass bg-white/80 rounded-3xl overflow-hidden border border-coffee/10 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+              className="group glass bg-white/60 rounded-[2.5rem] overflow-hidden border border-coffee/10 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
             >
               <div className="relative h-64 overflow-hidden">
                 <img 
@@ -90,11 +91,11 @@ export default function ThingsToDo() {
                 <div className="absolute inset-0 bg-gradient-to-t from-coffee-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="p-10 flex flex-col flex-grow">
                 <h2 className="font-display text-2xl text-coffee-dark font-bold mb-4 group-hover:text-coral transition-colors">
                   {activity.title}
                 </h2>
-                <p className="font-sans text-coffee/80 leading-relaxed mb-8 flex-grow">
+                <p className="font-sans text-coffee/80 leading-relaxed mb-8 flex-grow font-light">
                   {activity.description}
                 </p>
                 
@@ -102,7 +103,7 @@ export default function ThingsToDo() {
                   to={activity.link}
                   className="inline-flex items-center gap-2 text-coral font-bold uppercase tracking-widest text-sm hover:text-coral-light transition-colors group/link"
                 >
-                  View Related Tour
+                  Ver Tour Relacionado
                   <span className="w-8 h-px bg-coral group-hover/link:w-12 transition-all duration-300"></span>
                 </Link>
               </div>
@@ -112,20 +113,21 @@ export default function ThingsToDo() {
 
         {/* SEO Content Section */}
         <motion.section 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 max-w-4xl mx-auto prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
+          transition={{ duration: 1 }}
+          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
         >
-          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">Planning Your Medellín Itinerary</h2>
-          <p className="text-coffee/80 mb-6">
-            When deciding on <strong>things to do in Medellín</strong>, it's important to balance city exploration with day trips into the beautiful Antioquian countryside. We recommend spending at least 3-4 days in the city to truly appreciate its transformation and culture.
+          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">Planificando tu Itinerario en Medellín</h2>
+          <p className="text-coffee/80 mb-6 font-light">
+            Al decidir <strong>qué hacer en Medellín</strong>, es importante equilibrar la exploración de la ciudad con excursiones de un día al hermoso campo antioqueño. Recomendamos pasar al menos 3-4 días en la ciudad para apreciar verdaderamente su transformación y cultura.
           </p>
-          <p className="text-coffee/80 mb-6">
-            Start your trip with a comprehensive <strong>Medellín city tour</strong> to get your bearings and understand the public transport system. Dedicate a half-day to the inspiring <strong>Comuna 13 tour</strong> to see the power of social urbanism. Finally, no trip is complete without a full-day excursion on the <strong>Guatapé tour</strong> to climb El Peñol rock.
+          <p className="text-coffee/80 mb-6 font-light">
+            Comienza tu viaje con un completo <strong>city tour por Medellín</strong> para orientarte y comprender el sistema de transporte público. Dedica medio día al inspirador <strong>tour de la Comuna 13</strong> para ver el poder del urbanismo social. Finalmente, ningún viaje está completo sin una excursión de día completo en el <strong>tour a Guatapé</strong> para subir la piedra de El Peñol.
           </p>
-          <p className="text-coffee/80 mb-6">
-            If you have specific interests, consider booking one of our <strong>private tours in Medellín</strong>, which can be tailored to focus on gastronomy, art, or deeper historical context like the <strong>Pablo Escobar tour Medellín</strong> (focused on the victims and the city's resilience).
+          <p className="text-coffee/80 mb-6 font-light">
+            Si tienes intereses específicos, considera reservar uno de nuestros <strong>tours privados en Medellín</strong>, que pueden adaptarse para enfocarse en la gastronomía, el arte o un contexto histórico más profundo como el <strong>tour de Pablo Escobar en Medellín</strong> (enfocado en las víctimas y la resiliencia de la ciudad).
           </p>
         </motion.section>
       </div>

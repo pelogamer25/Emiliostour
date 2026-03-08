@@ -14,67 +14,67 @@ export const tours: Tour[] = [
   {
     id: 'comuna-13',
     slug: 'comuna-13-tour',
-    title: 'Comuna 13 Tour',
-    tagline: 'Graffiti, History & Transformation',
-    description: 'Experience the incredible transformation of Medellín\'s most famous neighborhood. Walk through vibrant streets filled with stunning graffiti, ride the iconic outdoor escalators, and hear stories of resilience from local guides.',
-    duration: '3-4 Hours',
+    title: 'Tour Comuna 13',
+    tagline: 'Grafiti, Historia y Transformación',
+    description: 'Experimenta la increíble transformación del barrio más famoso de Medellín. Camina por calles vibrantes llenas de impresionantes grafitis, sube por las icónicas escaleras mecánicas al aire libre y escucha historias de resiliencia de guías locales.',
+    duration: '3-4 Horas',
     price: '$35 USD',
     image: 'https://picsum.photos/seed/comuna13/800/1200',
-    highlights: ['Outdoor Escalators', 'Street Art & Graffiti', 'Local Street Food Tasting', 'Expert Local Guide']
+    highlights: ['Escaleras Mecánicas', 'Arte Callejero y Grafiti', 'Degustación de Comida Callejera', 'Guía Local Experto']
   },
   {
     id: 'guatape',
     slug: 'guatape-tour',
-    title: 'Guatapé Tour',
-    tagline: 'The Rock & The Colorful Town',
-    description: 'Climb the 740 steps of El Peñol rock for breathtaking panoramic views of the surrounding lakes. Then, explore the vibrant, colorful streets of Guatapé, known for its beautiful zócalos (bas-reliefs) adorning every home.',
-    duration: 'Full Day (10 Hours)',
+    title: 'Tour a Guatapé',
+    tagline: 'La Piedra y el Pueblo Colorido',
+    description: 'Sube los 740 escalones de la piedra de El Peñol para disfrutar de impresionantes vistas panorámicas de los lagos circundantes. Luego, explora las vibrantes y coloridas calles de Guatapé, conocidas por sus hermosos zócalos que adornan cada hogar.',
+    duration: 'Día Completo (10 Horas)',
     price: '$65 USD',
     image: 'https://picsum.photos/seed/guatape/800/1200',
-    highlights: ['Climb El Peñol Rock', 'Boat Ride on the Lake', 'Explore Colorful Guatapé', 'Traditional Colombian Lunch']
+    highlights: ['Subir la Piedra de El Peñol', 'Paseo en Barco por el Lago', 'Explorar el Colorido Guatapé', 'Almuerzo Tradicional Colombiano']
   },
   {
     id: 'pablo-escobar',
     slug: 'pablo-escobar-tour',
-    title: 'Pablo Escobar Tour',
-    tagline: 'Understanding Medellín\'s Past',
-    description: 'A historical and objective look at the dark era of the 1980s and 90s. Visit key locations related to Pablo Escobar and learn how the city and its people overcame violence to become the innovative metropolis it is today.',
-    duration: '4 Hours',
+    title: 'Tour Pablo Escobar',
+    tagline: 'Entendiendo el Pasado de Medellín',
+    description: 'Una mirada histórica y objetiva a la oscura época de los años 80 y 90. Visita lugares clave relacionados con Pablo Escobar y aprende cómo la ciudad y su gente superaron la violencia para convertirse en la metrópolis innovadora que es hoy.',
+    duration: '4 Horas',
     price: '$45 USD',
     image: 'https://picsum.photos/seed/escobar/800/1200',
-    highlights: ['Monaco Building Memorial', 'Cemetery Visit', 'Historical Context', 'Focus on Victims & Resilience']
+    highlights: ['Memorial del Edificio Mónaco', 'Visita al Cementerio', 'Contexto Histórico', 'Enfoque en las Víctimas y la Resiliencia']
   },
   {
     id: 'coffee',
     slug: 'coffee-tour-medellin',
-    title: 'Coffee Tour Medellín',
-    tagline: 'From Bean to Cup',
-    description: 'Journey into the lush mountains of Antioquia to visit a traditional Colombian coffee farm. Learn the entire process of coffee making, from planting and harvesting to roasting and brewing the perfect cup.',
-    duration: 'Half Day (5 Hours)',
+    title: 'Tour Cafetero Medellín',
+    tagline: 'Del Grano a la Taza',
+    description: 'Viaja a las exuberantes montañas de Antioquia para visitar una finca cafetera tradicional colombiana. Aprende todo el proceso de elaboración del café, desde la siembra y la cosecha hasta el tostado y la preparación de la taza perfecta.',
+    duration: 'Medio Día (5 Horas)',
     price: '$55 USD',
     image: 'https://picsum.photos/seed/coffee/800/1200',
-    highlights: ['Visit a Working Coffee Farm', 'Coffee Tasting Session', 'Learn the Roasting Process', 'Beautiful Mountain Views']
+    highlights: ['Visita a una Finca Cafetera', 'Sesión de Degustación de Café', 'Aprender el Proceso de Tostado', 'Hermosas Vistas a la Montaña']
   },
   {
     id: 'private',
     slug: 'private-tours-medellin',
-    title: 'Private Medellín Tour',
-    tagline: 'Tailored to Your Dreams',
-    description: 'Experience Medellín exactly how you want to. Our private tours are fully customizable. Whether you want a deep dive into art, gastronomy, history, or nature, we craft the perfect itinerary just for you.',
+    title: 'Tour Privado por Medellín',
+    tagline: 'Adaptado a tus Sueños',
+    description: 'Experimenta Medellín exactamente como deseas. Nuestros tours privados son totalmente personalizables. Ya sea que desees una inmersión profunda en el arte, la gastronomía, la historia o la naturaleza, diseñamos el itinerario perfecto solo para ti.',
     duration: 'Flexible',
-    price: 'From $120 USD',
+    price: 'Desde $120 USD',
     image: 'https://picsum.photos/seed/private/800/1200',
-    highlights: ['Customizable Itinerary', 'Private Transportation', 'Dedicated Expert Guide', 'VIP Experience']
+    highlights: ['Itinerario Personalizable', 'Transporte Privado', 'Guía Experto Dedicado', 'Experiencia VIP']
   },
   {
     id: 'city',
     slug: 'medellin-city-tour',
-    title: 'Medellín City Tour',
-    tagline: 'The Heart of the City of Eternal Spring',
-    description: 'Discover the essential sights of Medellín. Ride the innovative Metro and Metrocable systems, visit Plaza Botero with its famous sculptures, and explore the bustling downtown area.',
-    duration: '4-5 Hours',
+    title: 'City Tour Medellín',
+    tagline: 'El Corazón de la Ciudad de la Eterna Primavera',
+    description: 'Descubre los lugares esenciales de Medellín. Viaja en los innovadores sistemas de Metro y Metrocable, visita la Plaza Botero con sus famosas esculturas y explora la bulliciosa zona del centro.',
+    duration: '4-5 Horas',
     price: '$40 USD',
     image: 'https://picsum.photos/seed/medellin/800/1200',
-    highlights: ['Plaza Botero', 'Metrocable Ride', 'Pueblito Paisa', 'Downtown Exploration']
+    highlights: ['Plaza Botero', 'Paseo en Metrocable', 'Pueblito Paisa', 'Exploración del Centro']
   }
 ];

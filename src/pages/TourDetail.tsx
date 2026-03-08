@@ -26,7 +26,7 @@ export default function TourDetail() {
       <SEO 
         title={`${tour.title} | Emilio's Tours Medellín`}
         description={tour.description}
-        keywords={`${tour.title}, ${tour.slug.replace(/-/g, ' ')}, Medellín tours, Colombia`}
+        keywords={`${tour.title}, ${tour.slug.replace(/-/g, ' ')}, Tours en Medellín, Colombia`}
         url={`https://emiliostours.com/${tour.slug}`}
         image={tour.image}
         schema={{
@@ -67,8 +67,8 @@ export default function TourDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/medellin-tours" className="inline-flex items-center gap-2 text-sand/80 hover:text-coral transition-colors mb-8 font-sans uppercase tracking-widest text-sm">
-              <ArrowLeft className="w-4 h-4" /> Back to Tours
+            <Link to="/medellin-tours" className="inline-flex items-center gap-2 text-sand/80 hover:text-coral transition-colors mb-8 font-sans uppercase tracking-widest text-sm font-bold">
+              <ArrowLeft className="w-4 h-4" /> Volver a los Tours
             </Link>
           </motion.div>
           
@@ -85,7 +85,7 @@ export default function TourDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-sans text-xl md:text-2xl text-coral-light drop-shadow-md tracking-wide"
+            className="font-sans text-xl md:text-2xl text-coral-light drop-shadow-md tracking-wide font-light"
           >
             {tour.tagline}
           </motion.p>
@@ -97,12 +97,12 @@ export default function TourDetail() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Details */}
-          <div className="lg:col-span-2 glass-dark bg-white/90 p-8 md:p-12 rounded-3xl shadow-2xl border border-white/50">
-            <h2 className="font-display text-4xl text-coffee-dark font-bold mb-8">About the Tour</h2>
+          <div className="lg:col-span-2 glass bg-white/60 p-8 md:p-12 rounded-[3rem] shadow-2xl border border-white/50">
+            <h2 className="font-display text-4xl text-coffee-dark font-bold mb-8">Sobre el Tour</h2>
             <div className="prose prose-lg prose-p:font-sans prose-p:text-coffee/80 max-w-none">
-              <p className="text-xl leading-relaxed mb-8">{tour.description}</p>
+              <p className="text-xl leading-relaxed mb-8 font-light">{tour.description}</p>
               
-              <h3 className="font-display text-3xl text-coffee-dark mt-12 mb-6">Tour Highlights</h3>
+              <h3 className="font-display text-3xl text-coffee-dark mt-12 mb-6">Lo Más Destacado</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
                 {tour.highlights.map((highlight, index) => (
                   <motion.li 
@@ -114,7 +114,7 @@ export default function TourDetail() {
                     className="flex items-start gap-3 text-coffee/80 font-sans"
                   >
                     <CheckCircle2 className="w-6 h-6 text-vine shrink-0 mt-0.5" />
-                    <span className="text-lg">{highlight}</span>
+                    <span className="text-lg font-light">{highlight}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -122,14 +122,14 @@ export default function TourDetail() {
               {/* SEO Content Injection based on slug */}
               {slug === 'comuna-13-tour' && (
                 <div className="mt-16 pt-8 border-t border-coffee/10">
-                  <h2 className="font-display text-3xl text-coffee-dark mb-4">Is the Comuna 13 tour safe?</h2>
-                  <p>Yes, absolutely. Today, Comuna 13 is one of the safest and most vibrant areas for tourists in Medellín. Our local guides are deeply respected in the community, ensuring a secure, welcoming, and authentic experience.</p>
+                  <h2 className="font-display text-3xl text-coffee-dark mb-4">¿Es seguro el tour a la Comuna 13?</h2>
+                  <p className="font-light">Sí, absolutamente. Hoy en día, la Comuna 13 es una de las áreas más seguras y vibrantes para los turistas en Medellín. Nuestros guías locales son profundamente respetados en la comunidad, asegurando una experiencia segura, acogedora y auténtica.</p>
                 </div>
               )}
               {slug === 'guatape-tour' && (
                 <div className="mt-16 pt-8 border-t border-coffee/10">
-                  <h2 className="font-display text-3xl text-coffee-dark mb-4">How long does the Guatapé tour take?</h2>
-                  <p>The Guatapé tour is a full-day experience, typically lasting around 10 hours. This includes travel time from Medellín, climbing El Peñol rock, exploring the colorful town of Guatapé, and enjoying a traditional Colombian lunch.</p>
+                  <h2 className="font-display text-3xl text-coffee-dark mb-4">¿Cuánto dura el tour a Guatapé?</h2>
+                  <p className="font-light">El tour a Guatapé es una experiencia de día completo, que generalmente dura alrededor de 10 horas. Esto incluye el tiempo de viaje desde Medellín, subir la piedra de El Peñol, explorar el colorido pueblo de Guatapé y disfrutar de un almuerzo tradicional colombiano.</p>
                 </div>
               )}
             </div>
@@ -141,9 +141,9 @@ export default function TourDetail() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="sticky top-32 glass-dark bg-coffee-dark p-8 rounded-3xl shadow-2xl border border-white/10 text-sand"
+              className="sticky top-32 glass-dark bg-coffee-dark/80 p-10 rounded-[3rem] shadow-2xl border border-white/10 text-sand"
             >
-              <h3 className="font-display text-3xl text-white mb-8 border-b border-white/10 pb-6">Tour Details</h3>
+              <h3 className="font-display text-3xl text-white mb-8 border-b border-white/10 pb-6">Detalles del Tour</h3>
               
               <div className="space-y-6 mb-10">
                 <div className="flex items-center gap-4">
@@ -151,8 +151,8 @@ export default function TourDetail() {
                     <Clock className="w-6 h-6 text-coral" />
                   </div>
                   <div>
-                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider">Duration</p>
-                    <p className="font-sans text-xl font-bold">{tour.duration}</p>
+                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider font-bold">Duración</p>
+                    <p className="font-sans text-xl font-light">{tour.duration}</p>
                   </div>
                 </div>
                 
@@ -161,8 +161,8 @@ export default function TourDetail() {
                     <DollarSign className="w-6 h-6 text-gold" />
                   </div>
                   <div>
-                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider">Price</p>
-                    <p className="font-sans text-xl font-bold">{tour.price}</p>
+                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider font-bold">Precio</p>
+                    <p className="font-sans text-xl font-light">{tour.price}</p>
                   </div>
                 </div>
 
@@ -171,19 +171,19 @@ export default function TourDetail() {
                     <Calendar className="w-6 h-6 text-vine" />
                   </div>
                   <div>
-                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider">Availability</p>
-                    <p className="font-sans text-xl font-bold">Daily Departures</p>
+                    <p className="font-sans text-sm text-sand/60 uppercase tracking-wider font-bold">Disponibilidad</p>
+                    <p className="font-sans text-xl font-light">Salidas Diarias</p>
                   </div>
                 </div>
               </div>
 
               <button className="w-full bg-coral text-white py-4 rounded-full uppercase tracking-widest font-bold text-lg hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,142,101,0.5)] relative overflow-hidden group">
-                <span className="relative z-10">Book Now</span>
+                <span className="relative z-10">Reservar Ahora</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-coral-light to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
               
-              <p className="text-center font-sans text-sm text-sand/50 mt-6">
-                No payment required to reserve.
+              <p className="text-center font-sans text-sm text-sand/50 mt-6 font-light">
+                No se requiere pago para reservar.
               </p>
             </motion.div>
           </div>

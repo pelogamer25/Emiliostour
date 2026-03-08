@@ -23,11 +23,11 @@ export default function Layout() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'All Tours', path: '/medellin-tours' },
-    { name: 'Things To Do', path: '/things-to-do-medellin' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Inicio', path: '/' },
+    { name: 'Todos los Tours', path: '/medellin-tours' },
+    { name: 'Qué Hacer', path: '/things-to-do-medellin' },
+    { name: 'Preguntas Frecuentes', path: '/faq' },
+    { name: 'Contacto', path: '/contact' },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Layout() {
               to="/medellin-tours"
               className="bg-coral/90 backdrop-blur-md text-white px-6 py-2 rounded-full uppercase tracking-widest text-sm font-bold hover:bg-coral transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(255,142,101,0.4)]"
             >
-              Book Now
+              Reservar Ahora
             </Link>
           </nav>
 
@@ -128,34 +128,34 @@ export default function Layout() {
               </span>
             </Link>
             <p className="font-sans text-sand/80 max-w-md leading-relaxed mb-6">
-              More than tours. We sell dreams, experiences, and unforgettable adventures in Medellín, Colombia. Discover the magic of Antioquia with our expert local guides.
+              Más que tours. Vendemos sueños, experiencias y aventuras inolvidables en Medellín, Colombia. Descubre la magia de Antioquia con nuestros guías locales expertos.
             </p>
           </div>
           
           <div>
-            <h4 className="font-display text-xl text-white mb-6 drop-shadow-md">Quick Links</h4>
+            <h4 className="font-display text-xl text-white mb-6 drop-shadow-md">Enlaces Rápidos</h4>
             <ul className="space-y-4 font-sans text-sand/80">
-              <li><Link to="/medellin-tours" className="hover:text-coral transition-colors">All Tours</Link></li>
-              <li><Link to="/comuna-13-tour" className="hover:text-coral transition-colors">Comuna 13 Tour</Link></li>
-              <li><Link to="/guatape-tour" className="hover:text-coral transition-colors">Guatapé Tour</Link></li>
-              <li><Link to="/faq" className="hover:text-coral transition-colors">FAQ</Link></li>
-              <li><Link to="/contact" className="hover:text-coral transition-colors">Contact Us</Link></li>
+              <li><Link to="/medellin-tours" className="hover:text-coral transition-colors">Todos los Tours</Link></li>
+              <li><Link to="/comuna-13-tour" className="hover:text-coral transition-colors">Tour Comuna 13</Link></li>
+              <li><Link to="/guatape-tour" className="hover:text-coral transition-colors">Tour a Guatapé</Link></li>
+              <li><Link to="/faq" className="hover:text-coral transition-colors">Preguntas Frecuentes</Link></li>
+              <li><Link to="/contact" className="hover:text-coral transition-colors">Contáctanos</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display text-xl text-white mb-6 drop-shadow-md">Contact</h4>
+            <h4 className="font-display text-xl text-white mb-6 drop-shadow-md">Contacto</h4>
             <ul className="space-y-4 font-sans text-sand/80">
               <li>Medellín, Antioquia</li>
               <li>Colombia</li>
-              <li>hello@emiliostours.com</li>
+              <li>hola@emiliostours.com</li>
               <li>+57 300 123 4567</li>
             </ul>
           </div>
         </div>
         
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center font-sans text-sm text-sand/60">
-          <p>&copy; {new Date().getFullYear()} Emilio's Tours Medellín. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Emilio's Tours Medellín. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>

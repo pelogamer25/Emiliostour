@@ -80,7 +80,7 @@ export default function TourCard({ tour, index }: TourCardProps) {
               to={`/${tour.slug}`}
               className="block w-full text-center bg-coral text-white py-3 rounded-full uppercase tracking-widest text-sm font-bold hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,142,101,0.4)] relative overflow-hidden group/btn"
             >
-              <span className="relative z-10">Book This Tour</span>
+              <span className="relative z-10">Reservar Este Tour</span>
               <div className="absolute inset-0 bg-gradient-to-r from-coral-light to-coral opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
             </Link>
           </div>

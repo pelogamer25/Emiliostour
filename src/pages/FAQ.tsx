@@ -5,28 +5,28 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    question: "What are the best tours in Medellín?",
-    answer: "The best tours in Medellín depend on your interests. For history and transformation, the Comuna 13 tour is a must. For breathtaking nature, the Guatapé tour is highly recommended. If you want a comprehensive overview, our Medellín city tour covers all the essentials."
+    question: "¿Cuáles son los mejores tours en Medellín?",
+    answer: "Los mejores tours en Medellín dependen de tus intereses. Para historia y transformación, el tour a la Comuna 13 es imprescindible. Para una naturaleza impresionante, el tour a Guatapé es muy recomendable. Si deseas una visión general completa, nuestro city tour por Medellín cubre todos los aspectos esenciales."
   },
   {
-    question: "Is the Comuna 13 tour safe?",
-    answer: "Yes, absolutely. Today, Comuna 13 is one of the safest and most vibrant areas for tourists in Medellín. Our local guides are deeply respected in the community, ensuring a secure, welcoming, and authentic experience."
+    question: "¿Es seguro el tour a la Comuna 13?",
+    answer: "Sí, absolutamente. Hoy en día, la Comuna 13 es una de las áreas más seguras y vibrantes para los turistas en Medellín. Nuestros guías locales son profundamente respetados en la comunidad, asegurando una experiencia segura, acogedora y auténtica."
   },
   {
-    question: "How long does the Guatapé tour take?",
-    answer: "The Guatapé tour is a full-day experience, typically lasting around 10 hours. This includes travel time from Medellín, climbing the 740 steps of El Peñol rock, exploring the colorful town of Guatapé, and enjoying a traditional Colombian lunch."
+    question: "¿Cuánto dura el tour a Guatapé?",
+    answer: "El tour a Guatapé es una experiencia de día completo, que generalmente dura alrededor de 10 horas. Esto incluye el tiempo de viaje desde Medellín, subir los 740 escalones de la piedra de El Peñol, explorar el colorido pueblo de Guatapé y disfrutar de un almuerzo tradicional colombiano."
   },
   {
-    question: "What should I bring for a Medellín tour?",
-    answer: "Medellín is the 'City of Eternal Spring', so dress comfortably in layers. Bring comfortable walking shoes, sunscreen, a hat, a light rain jacket (weather can change quickly), and a reusable water bottle."
+    question: "¿Qué debo llevar para un tour en Medellín?",
+    answer: "Medellín es la 'Ciudad de la Eterna Primavera', así que vístete cómodamente en capas. Lleva zapatos cómodos para caminar, protector solar, un sombrero, una chaqueta impermeable ligera (el clima puede cambiar rápidamente) y una botella de agua reutilizable."
   },
   {
-    question: "Are private tours available in Medellín?",
-    answer: "Yes! We offer fully customizable private tours in Medellín. Whether you want a tailored itinerary, private transportation, or a dedicated expert guide for your group, we can craft the perfect experience for you."
+    question: "¿Hay tours privados disponibles en Medellín?",
+    answer: "¡Sí! Ofrecemos tours privados totalmente personalizables en Medellín. Ya sea que desees un itinerario a medida, transporte privado o un guía experto dedicado para tu grupo, podemos diseñar la experiencia perfecta para ti."
   },
   {
-    question: "Do I need to book tours in advance?",
-    answer: "While we accept last-minute bookings subject to availability, we highly recommend booking your Medellín tours at least a few days in advance, especially during peak tourist seasons (December-January, Easter week, and July-August)."
+    question: "¿Necesito reservar los tours con anticipación?",
+    answer: "Aunque aceptamos reservas de última hora sujetas a disponibilidad, recomendamos encarecidamente reservar tus tours en Medellín con al menos unos días de anticipación, especialmente durante las temporadas altas de turismo (diciembre-enero, Semana Santa y julio-agosto)."
   }
 ];
 
@@ -36,15 +36,15 @@ export default function FAQ() {
   return (
     <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
-        title="Frequently Asked Questions | Emilio's Tours Medellín"
-        description="Find answers to frequently asked questions about Medellín tours, including safety in Comuna 13, Guatapé tour duration, and what to bring."
-        keywords="FAQ Medellín tours, Comuna 13 safe, Guatapé tour length, private tours Medellín"
+        title="Preguntas Frecuentes | Emilio's Tours Medellín"
+        description="Encuentra respuestas a las preguntas frecuentes sobre los tours en Medellín, incluyendo la seguridad en la Comuna 13, la duración del tour a Guatapé y qué llevar."
+        keywords="FAQ tours Medellín, Comuna 13 seguro, duración tour Guatapé, tours privados Medellín"
         url="https://emiliostours.com/faq"
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-40 -left-20 w-64 h-64 bg-coral/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-40 -right-20 w-96 h-96 bg-vine/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-40 -left-20 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[120px] -z-10 animate-blob mix-blend-multiply"></div>
+      <div className="absolute bottom-40 -right-20 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[150px] -z-10 animate-blob animation-delay-2000 mix-blend-multiply"></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
@@ -54,15 +54,15 @@ export default function FAQ() {
           className="text-center mb-20"
         >
           <h1 className="font-display text-5xl md:text-7xl text-coffee-dark font-bold mb-6">
-            Frequently Asked Questions
+            Preguntas Frecuentes
           </h1>
-          <p className="font-sans text-xl text-coffee/80 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about our Medellín tours, safety, and what to expect on your Colombian adventure.
+          <p className="font-sans text-xl text-coffee/80 max-w-2xl mx-auto leading-relaxed font-light">
+            Todo lo que necesitas saber sobre nuestros tours en Medellín, seguridad y qué esperar en tu aventura colombiana.
           </p>
         </motion.div>
 
         <div className="space-y-6">
-          <h2 className="sr-only">Frequently Asked Questions About Medellín Tours</h2>
+          <h2 className="sr-only">Preguntas Frecuentes Sobre los Tours en Medellín</h2>
           {faqs.map((faq, index) => (
             <motion.div 
               key={index}
@@ -70,16 +70,16 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass bg-white/60 rounded-2xl overflow-hidden border border-coffee/10 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="glass bg-white/40 rounded-[2rem] overflow-hidden border border-coffee/10 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none group"
+                className="w-full px-8 py-8 flex justify-between items-center text-left focus:outline-none group"
               >
                 <h3 className="font-display text-2xl text-coffee-dark font-bold group-hover:text-coral transition-colors pr-8">
                   {faq.question}
                 </h3>
-                <div className={`w-10 h-10 rounded-full bg-coffee/5 flex items-center justify-center shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 bg-coral/10 text-coral' : 'text-coffee'}`}>
+                <div className={`w-12 h-12 rounded-full bg-coffee/5 flex items-center justify-center shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 bg-coral/10 text-coral' : 'text-coffee'}`}>
                   <ChevronDown className="w-6 h-6" />
                 </div>
               </button>
@@ -93,7 +93,7 @@ export default function FAQ() {
                 className="overflow-hidden"
               >
                 <div className="px-8 pb-8 pt-2">
-                  <p className="font-sans text-lg text-coffee/80 leading-relaxed border-t border-coffee/10 pt-6">
+                  <p className="font-sans text-lg text-coffee/80 leading-relaxed border-t border-coffee/10 pt-6 font-light">
                     {faq.answer}
                   </p>
                 </div>
