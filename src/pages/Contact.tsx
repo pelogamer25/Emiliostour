@@ -123,12 +123,17 @@ export default function Contact() {
                   className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-coral transition-colors appearance-none font-light"
                 >
                   <option value="" className="text-coffee-dark">Selecciona un Tour...</option>
-                  <option value="comuna13" className="text-coffee-dark">Tour Comuna 13</option>
+                  <option value="graffiti" className="text-coffee-dark">Graffiti Tour</option>
                   <option value="guatape" className="text-coffee-dark">Tour a Guatapé</option>
-                  <option value="escobar" className="text-coffee-dark">Tour Pablo Escobar</option>
-                  <option value="coffee" className="text-coffee-dark">Tour Cafetero</option>
-                  <option value="private" className="text-coffee-dark">Tour Privado</option>
-                  <option value="city" className="text-coffee-dark">City Tour Medellín</option>
+                  <option value="cafe" className="text-coffee-dark">Tour del Café</option>
+                  <option value="parapente" className="text-coffee-dark">Vuelo en Parapente</option>
+                  <option value="cuatrimotos" className="text-coffee-dark">Aventura en Cuatrimotos</option>
+                  <option value="ebike" className="text-coffee-dark">Tour en Bicicleta Eléctrica</option>
+                  <option value="escobar" className="text-coffee-dark">Tour Pablo Escobar (Histórico)</option>
+                  <option value="napoles" className="text-coffee-dark">Hacienda Nápoles (2 Días)</option>
+                  <option value="cabalgata" className="text-coffee-dark">Cabalgata</option>
+                  <option value="trekking" className="text-coffee-dark">Trekking Envigado</option>
+                  <option value="gastronomico" className="text-coffee-dark">Tour Gastronómico</option>
                   <option value="other" className="text-coffee-dark">Otro / Consulta General</option>
                 </select>
               </div>

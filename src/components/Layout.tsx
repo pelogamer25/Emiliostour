@@ -26,6 +26,7 @@ export default function Layout() {
     { name: 'Inicio', path: '/' },
     { name: 'Todos los Tours', path: '/medellin-tours' },
     { name: 'Qué Hacer', path: '/things-to-do-medellin' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Preguntas Frecuentes', path: '/faq' },
     { name: 'Contacto', path: '/contact' },
   ];

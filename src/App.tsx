@@ -7,6 +7,7 @@ import TourDetail from './pages/TourDetail';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import ThingsToDo from './pages/ThingsToDo';
+import Blog from './pages/Blog';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="medellin-tours" element={<Tours />} />
             <Route path="things-to-do-medellin" element={<ThingsToDo />} />
+            <Route path="blog" element={<Blog />} />
             <Route path="faq" element={<FAQ />} />
             <Route path="contact" element={<Contact />} />
             <Route path=":slug" element={<TourDetail />} />
