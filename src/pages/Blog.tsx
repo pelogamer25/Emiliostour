@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
@@ -61,8 +62,18 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
+    <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
         title="Blog de Viajes | Emilio's Tours Medellín"
         description="Lee nuestros últimos artículos sobre qué hacer en Medellín, consejos de viaje, historia, cultura y gastronomía colombiana."
@@ -71,8 +82,24 @@ export default function Blog() {
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] -z-10 animate-blob mix-blend-multiply"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000 mix-blend-multiply"></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply" 
+        />
+      </div>
+
+      {/* Decorative scrolling text background */}
+      <motion.div 
+        style={{ x: xText }}
+        className="absolute top-40 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+      >
+        <span className="font-display text-[12rem] font-bold text-coffee-dark">BLOG DE VIAJES</span>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
@@ -108,7 +135,7 @@ export default function Blog() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full">
-                  <span className="font-sans text-xs font-bold text-coral uppercase tracking-wider">{post.category}</span>
+                  <span className="font-sans text-xs font-bold text-gold uppercase tracking-wider">{post.category}</span>
                 </div>
               </div>
               
@@ -124,7 +151,7 @@ export default function Blog() {
                   </div>
                 </div>
 
-                <h2 className="font-display text-2xl text-coffee-dark font-bold mb-4 group-hover:text-coral transition-colors">
+                <h2 className="font-display text-2xl text-coffee-dark font-bold mb-4 group-hover:text-gold transition-colors">
                   {post.title}
                 </h2>
                 <p className="font-sans text-coffee/80 leading-relaxed mb-8 flex-grow font-light">
@@ -133,7 +160,7 @@ export default function Blog() {
                 
                 <Link 
                   to={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-2 text-coral font-bold uppercase tracking-widest text-sm hover:text-coral-light transition-colors group/link mt-auto"
+                  className="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest text-sm hover:text-gold transition-colors group/link mt-auto"
                 >
                   Leer más
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform duration-300" />

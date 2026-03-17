@@ -2,15 +2,15 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-coffee: #6C5A49;
-  --color-coffee-dark: #4A3C2F;
-  --color-coral: #FF8E65;
-  --color-coral-light: #FFAA8A;
-  --color-sand: #F4E8D1;
-  --color-beige: #FDFBF7;
-  --color-gold: #D4AF37;
-  --color-vine: #4A7C59;
-  --color-flower: #D9381E;
+  --color-coffee: #403605;
+  --color-coffee-dark: #1A1602;
+  --color-coral: #F0C90C;
+  --color-coral-light: #FDF4C2;
+  --color-sand: #F0EBE1;
+  --color-beige: #FCFBFA;
+  --color-gold: #998008;
+  --color-vine: #2D5A27;
+  --color-flower: #E65C00;
 
   --font-display: "Playfair Display", serif;
   --font-sans: "Lato", sans-serif;
@@ -80,4 +80,8 @@
 }
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-coral via-gold to-sand;
 }

@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Compass, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Layout() {
@@ -41,10 +41,12 @@ export default function Layout() {
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <Compass className="w-8 h-8 text-coral group-hover:rotate-180 transition-transform duration-1000" />
-            <span className="font-display text-2xl font-bold tracking-wider text-coffee-dark drop-shadow-sm">
-              Emilio's Tours
-            </span>
+            <img 
+              src="https://i.imgur.com/DJ8zMkI.png" 
+              alt="Emilio's Tours Logo" 
+              className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-sm"
+              referrerPolicy="no-referrer"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -53,7 +55,7 @@ export default function Layout() {
               <Link
                 key={link.name}
                 to={link.path}
-                className="font-sans text-sm uppercase tracking-widest hover:text-coral transition-colors relative group font-bold drop-shadow-sm"
+                className="font-sans text-sm uppercase tracking-widest hover:text-gold transition-colors relative group font-bold drop-shadow-sm"
               >
                 {link.name}
                 <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-coral transition-all duration-500 group-hover:w-full"></span>
@@ -61,7 +63,7 @@ export default function Layout() {
             ))}
             <Link
               to="/medellin-tours"
-              className="bg-coral/90 backdrop-blur-md text-white px-6 py-2 rounded-full uppercase tracking-widest text-sm font-bold hover:bg-coral transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(255,142,101,0.4)]"
+              className="bg-coral/90 backdrop-blur-md text-coffee-dark px-6 py-2 rounded-full uppercase tracking-widest text-sm font-bold hover:bg-coral transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(240,201,12,0.4)]"
             >
               Reservar Ahora
             </Link>
@@ -90,7 +92,7 @@ export default function Layout() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="font-sans text-lg uppercase tracking-widest font-bold hover:text-coral transition-colors"
+                  className="font-sans text-lg uppercase tracking-widest font-bold hover:text-gold transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -123,10 +125,12 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6 group">
-              <Compass className="w-8 h-8 text-coral group-hover:rotate-180 transition-transform duration-1000" />
-              <span className="font-display text-3xl font-bold tracking-wider text-white">
-                Emilio's Tours
-              </span>
+              <img 
+                src="https://i.imgur.com/DJ8zMkI.png" 
+                alt="Emilio's Tours Logo" 
+                className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105 brightness-0 invert opacity-90"
+                referrerPolicy="no-referrer"
+              />
             </Link>
             <p className="font-sans text-sand/80 max-w-md leading-relaxed mb-6">
               Más que tours. Vendemos sueños, experiencias y aventuras inolvidables en Medellín, Colombia. Descubre la magia de Antioquia con nuestros guías locales expertos.
@@ -136,11 +140,11 @@ export default function Layout() {
           <div>
             <h4 className="font-display text-xl text-white mb-6 drop-shadow-md">Enlaces Rápidos</h4>
             <ul className="space-y-4 font-sans text-sand/80">
-              <li><Link to="/medellin-tours" className="hover:text-coral transition-colors">Todos los Tours</Link></li>
-              <li><Link to="/comuna-13-tour" className="hover:text-coral transition-colors">Tour Comuna 13</Link></li>
-              <li><Link to="/guatape-tour" className="hover:text-coral transition-colors">Tour a Guatapé</Link></li>
-              <li><Link to="/faq" className="hover:text-coral transition-colors">Preguntas Frecuentes</Link></li>
-              <li><Link to="/contact" className="hover:text-coral transition-colors">Contáctanos</Link></li>
+              <li><Link to="/medellin-tours" className="hover:text-gold transition-colors">Todos los Tours</Link></li>
+              <li><Link to="/comuna-13-tour" className="hover:text-gold transition-colors">Tour Comuna 13</Link></li>
+              <li><Link to="/guatape-tour" className="hover:text-gold transition-colors">Tour a Guatapé</Link></li>
+              <li><Link to="/faq" className="hover:text-gold transition-colors">Preguntas Frecuentes</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors">Contáctanos</Link></li>
             </ul>
           </div>
 

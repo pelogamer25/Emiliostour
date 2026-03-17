@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 
@@ -42,8 +43,18 @@ const activities = [
 ];
 
 export default function ThingsToDo() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
+    <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
         title="Qué Hacer en Medellín | Principales Atracciones y Tours"
         description="Descubre las mejores cosas para hacer en Medellín, Colombia. Desde viajar en el Metrocable y explorar la Comuna 13 hasta excursiones de un día a Guatapé y fincas cafeteras."
@@ -52,8 +63,24 @@ export default function ThingsToDo() {
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-gradient-to-b from-coral/10 to-transparent rounded-full blur-[150px] -z-10 animate-blob mix-blend-multiply"></div>
-      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[120px] -z-10 animate-blob animation-delay-4000 mix-blend-multiply"></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-gradient-to-b from-coral/10 to-transparent rounded-full blur-[150px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[120px] animate-blob animation-delay-4000 mix-blend-multiply" 
+        />
+      </div>
+
+      {/* Decorative scrolling text background */}
+      <motion.div 
+        style={{ x: xText }}
+        className="absolute top-40 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+      >
+        <span className="font-display text-[12rem] font-bold text-coffee-dark">QUÉ HACER</span>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
@@ -92,7 +119,7 @@ export default function ThingsToDo() {
               </div>
               
               <div className="p-10 flex flex-col flex-grow">
-                <h2 className="font-display text-2xl text-coffee-dark font-bold mb-4 group-hover:text-coral transition-colors">
+                <h2 className="font-display text-2xl text-coffee-dark font-bold mb-4 group-hover:text-gold transition-colors">
                   {activity.title}
                 </h2>
                 <p className="font-sans text-coffee/80 leading-relaxed mb-8 flex-grow font-light">
@@ -101,10 +128,10 @@ export default function ThingsToDo() {
                 
                 <Link 
                   to={activity.link}
-                  className="inline-flex items-center gap-2 text-coral font-bold uppercase tracking-widest text-sm hover:text-coral-light transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest text-sm hover:text-gold transition-colors group/link"
                 >
                   Ver Tour Relacionado
-                  <span className="w-8 h-px bg-coral group-hover/link:w-12 transition-all duration-300"></span>
+                  <span className="w-8 h-px bg-gold group-hover/link:w-12 transition-all duration-300"></span>
                 </Link>
               </div>
             </motion.div>
@@ -117,7 +144,7 @@ export default function ThingsToDo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
+          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-gold"
         >
           <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">Planificando tu Itinerario en Medellín</h2>
           <p className="text-coffee/80 mb-6 font-light">

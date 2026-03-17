@@ -16,6 +16,8 @@ export default function TourDetail() {
   });
 
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   if (!tour) {
     return <Navigate to="/medellin-tours" replace />;
@@ -45,6 +47,18 @@ export default function TourDetail() {
           }
         }}
       />
+
+      {/* Decorative Elements */}
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-40 -left-20 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[120px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-40 -right-20 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[150px] animate-blob animation-delay-2000 mix-blend-multiply" 
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden flex items-center justify-center">
@@ -85,7 +99,7 @@ export default function TourDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-sans text-xl md:text-2xl text-coral-light drop-shadow-md tracking-wide font-light"
+            className="font-sans text-xl md:text-2xl text-coral drop-shadow-md tracking-wide font-light"
           >
             {tour.tagline}
           </motion.p>
@@ -177,7 +191,7 @@ export default function TourDetail() {
                 </div>
               </div>
 
-              <button className="w-full bg-coral text-white py-4 rounded-full uppercase tracking-widest font-bold text-lg hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,142,101,0.5)] relative overflow-hidden group">
+              <button className="w-full bg-coral text-coffee-dark py-4 rounded-full uppercase tracking-widest font-bold text-lg hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(240,201,12,0.5)] relative overflow-hidden group">
                 <span className="relative z-10">Reservar Ahora</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-coral-light to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>

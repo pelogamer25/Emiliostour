@@ -16,14 +16,19 @@ export default function Home() {
   // Parallax transforms for hero
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
-  const opacityHero = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
-  const blurHero = useTransform(scrollYProgress, [0, 0.3], ["blur(0px)", "blur(20px)"]);
-  const scaleImage = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const opacityHero = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const blurHero = useTransform(scrollYProgress, [0, 0.4], ["blur(0px)", "blur(30px)"]);
+  const scaleImage = useTransform(scrollYProgress, [0, 1], [1, 1.4]);
 
   // Parallax transforms for background blobs
-  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  const yBlob3 = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  const yBlob3 = useTransform(scrollYProgress, [0, 1], ["0%", "120%"]);
+  const yBlob4 = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+
+  // Horizontal scroll for decorative text
+  const xTextLeft = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xTextRight = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <div ref={containerRef} className="relative min-h-screen">
@@ -59,6 +64,10 @@ export default function Home() {
         <motion.div 
           style={{ y: yBlob3 }}
           className="absolute bottom-[-20%] left-[20%] w-[1000px] h-[1000px] bg-vine/15 rounded-full blur-[150px] animate-blob animation-delay-4000 mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob4 }}
+          className="absolute top-[60%] right-[20%] w-[700px] h-[700px] bg-coral-light/30 rounded-full blur-[130px] animate-blob mix-blend-multiply" 
         />
       </div>
 
@@ -109,7 +118,7 @@ export default function Home() {
             className="font-display text-6xl md:text-8xl lg:text-9xl text-white font-bold mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] leading-tight"
           >
             Más Que Tours.<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral via-gold to-sand drop-shadow-none">
+            <span className="gradient-text drop-shadow-none">
               Vendemos Sueños.
             </span>
           </motion.h1>
@@ -130,7 +139,7 @@ export default function Home() {
           >
             <Link 
               to="/medellin-tours"
-              className="inline-block glass bg-coral/80 text-white px-12 py-5 rounded-full uppercase tracking-[0.2em] font-bold hover:bg-coral transition-all duration-500 hover:scale-110 shadow-[0_0_40px_rgba(255,142,101,0.6)] relative overflow-hidden group"
+              className="inline-block glass bg-coral/80 text-coffee-dark px-12 py-5 rounded-full uppercase tracking-[0.2em] font-bold hover:bg-coral transition-all duration-500 hover:scale-110 shadow-[0_0_40px_rgba(240,201,12,0.6)] relative overflow-hidden group"
             >
               <span className="relative z-10">Explorar Medellín</span>
               <div className="absolute inset-0 bg-gradient-to-r from-coral-light to-coral opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -150,8 +159,16 @@ export default function Home() {
       </motion.section>
 
       {/* Introduction Section - Floating Glass */}
-      <section className="py-32 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-32 px-6 relative z-10 overflow-hidden">
+        {/* Decorative scrolling text background */}
+        <motion.div 
+          style={{ x: xTextLeft }}
+          className="absolute top-1/4 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+        >
+          <span className="font-display text-[15rem] font-bold text-coffee-dark">MEDELLÍN COLOMBIA</span>
+        </motion.div>
+        
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -170,7 +187,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-12 mt-12">
               <div className="flex flex-col items-center gap-4 group">
-                <div className="w-20 h-20 rounded-full glass bg-coral/20 flex items-center justify-center text-coral group-hover:scale-110 group-hover:bg-coral/30 transition-all duration-500">
+                <div className="w-20 h-20 rounded-full glass bg-coral/20 flex items-center justify-center text-gold group-hover:scale-110 group-hover:bg-coral/30 transition-all duration-500">
                   <Star className="w-10 h-10" />
                 </div>
                 <span className="font-sans font-bold text-coffee-dark tracking-wider uppercase text-sm">5 Estrellas</span>
@@ -187,8 +204,16 @@ export default function Home() {
       </section>
 
       {/* Featured Tours Section */}
-      <section className="py-32 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-6 relative z-10 overflow-hidden">
+        {/* Decorative scrolling text background */}
+        <motion.div 
+          style={{ x: xTextRight }}
+          className="absolute top-1/3 right-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+        >
+          <span className="font-display text-[15rem] font-bold text-coffee-dark">EXPERIENCIAS ÚNICAS</span>
+        </motion.div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -219,7 +244,7 @@ export default function Home() {
           >
             <Link 
               to="/medellin-tours"
-              className="inline-block glass bg-white/50 border-2 border-coral text-coral px-10 py-4 rounded-full uppercase tracking-widest font-bold hover:bg-coral hover:text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,142,101,0.4)]"
+              className="inline-block glass bg-white/50 border-2 border-coral text-gold px-10 py-4 rounded-full uppercase tracking-widest font-bold hover:bg-coral hover:text-coffee-dark transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(240,201,12,0.4)]"
             >
               Ver Todos los Tours
             </Link>
@@ -234,7 +259,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto glass bg-white/30 p-12 md:p-16 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
+          className="max-w-4xl mx-auto glass bg-white/30 p-12 md:p-16 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-gold"
         >
           <h2 className="text-4xl font-bold text-coffee-dark mb-6">¿Por qué elegir Emilio's Tours en Medellín?</h2>
           <p className="text-coffee/80 mb-4 font-light text-xl leading-relaxed">

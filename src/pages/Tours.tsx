@@ -1,11 +1,22 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import SEO from '../components/SEO';
 import TourCard from '../components/TourCard';
 import { tours } from '../data/tours';
 
 export default function Tours() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
+    <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
         title="Los Mejores Tours y Experiencias en Medellín | Emilio's Tours"
         description="Explora nuestra gama completa de tours en Medellín. Desde la vibrante Comuna 13 hasta el impresionante Guatapé y El Peñol. Reserva tu inolvidable aventura colombiana hoy."
@@ -14,8 +25,24 @@ export default function Tours() {
       />
 
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-vine/10 rounded-full blur-[100px] -z-10"></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-vine/10 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply" 
+        />
+      </div>
+
+      {/* Decorative scrolling text background */}
+      <motion.div 
+        style={{ x: xText }}
+        className="absolute top-40 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+      >
+        <span className="font-display text-[12rem] font-bold text-coffee-dark">NUESTROS TOURS</span>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
@@ -44,7 +71,7 @@ export default function Tours() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-coral"
+          className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-gold"
         >
           <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">¿Por qué reservar un tour en Medellín?</h2>
           <p className="text-coffee/80 mb-6 font-light">

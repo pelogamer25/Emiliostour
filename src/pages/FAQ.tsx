@@ -1,7 +1,7 @@
-import { motion } from 'motion/react';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import SEO from '../components/SEO';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
 
 const faqs = [
   {
@@ -32,9 +32,18 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
+    <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
         title="Preguntas Frecuentes | Emilio's Tours Medellín"
         description="Encuentra respuestas a las preguntas frecuentes sobre los tours en Medellín, incluyendo la seguridad en la Comuna 13, la duración del tour a Guatapé y qué llevar."
@@ -43,8 +52,24 @@ export default function FAQ() {
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-40 -left-20 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[120px] -z-10 animate-blob mix-blend-multiply"></div>
-      <div className="absolute bottom-40 -right-20 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[150px] -z-10 animate-blob animation-delay-2000 mix-blend-multiply"></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-40 -left-20 w-[600px] h-[600px] bg-coral/10 rounded-full blur-[120px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-40 -right-20 w-[800px] h-[800px] bg-vine/10 rounded-full blur-[150px] animate-blob animation-delay-2000 mix-blend-multiply" 
+        />
+      </div>
+
+      {/* Decorative scrolling text background */}
+      <motion.div 
+        style={{ x: xText }}
+        className="absolute top-40 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+      >
+        <span className="font-display text-[12rem] font-bold text-coffee-dark">PREGUNTAS</span>
+      </motion.div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
@@ -76,10 +101,10 @@ export default function FAQ() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-8 py-8 flex justify-between items-center text-left focus:outline-none group"
               >
-                <h3 className="font-display text-2xl text-coffee-dark font-bold group-hover:text-coral transition-colors pr-8">
+                <h3 className="font-display text-2xl text-coffee-dark font-bold group-hover:text-gold transition-colors pr-8">
                   {faq.question}
                 </h3>
-                <div className={`w-12 h-12 rounded-full bg-coffee/5 flex items-center justify-center shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 bg-coral/10 text-coral' : 'text-coffee'}`}>
+                <div className={`w-12 h-12 rounded-full bg-coffee/5 flex items-center justify-center shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180 bg-coral/20 text-gold' : 'text-coffee'}`}>
                   <ChevronDown className="w-6 h-6" />
                 </div>
               </button>

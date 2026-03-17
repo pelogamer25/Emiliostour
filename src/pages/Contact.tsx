@@ -1,10 +1,21 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import SEO from '../components/SEO';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
 export default function Contact() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const yBlob1 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+
   return (
-    <div className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
+    <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
       <SEO 
         title="Contacto | Emilio's Tours Medellín"
         description="Ponte en contacto con Emilio's Tours para reservar tu city tour por Medellín, la experiencia en la Comuna 13 o tu aventura privada colombiana."
@@ -13,8 +24,24 @@ export default function Contact() {
       />
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] -z-10 animate-blob mix-blend-multiply"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000 mix-blend-multiply"></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: yBlob1 }}
+          className="absolute top-0 right-0 w-[800px] h-[800px] bg-coral/10 rounded-full blur-[120px] animate-blob mix-blend-multiply" 
+        />
+        <motion.div 
+          style={{ y: yBlob2 }}
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply" 
+        />
+      </div>
+
+      {/* Decorative scrolling text background */}
+      <motion.div 
+        style={{ x: xText }}
+        className="absolute top-40 left-0 whitespace-nowrap opacity-5 pointer-events-none z-0"
+      >
+        <span className="font-display text-[12rem] font-bold text-coffee-dark">CONTÁCTANOS</span>
+      </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div 
@@ -47,7 +74,7 @@ export default function Contact() {
               <div className="space-y-10">
                 <div className="flex items-start gap-6 group">
                   <div className="w-16 h-16 rounded-full glass bg-coral/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
-                    <MapPin className="w-8 h-8 text-coral" />
+                    <MapPin className="w-8 h-8 text-gold" />
                   </div>
                   <div>
                     <h3 className="font-sans font-bold text-coffee-dark text-lg mb-1">Ubicación</h3>
@@ -101,7 +128,7 @@ export default function Contact() {
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-coral transition-colors font-light"
+                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light"
                   placeholder="Tu Nombre"
                 />
               </div>
@@ -111,7 +138,7 @@ export default function Contact() {
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-coral transition-colors font-light"
+                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light"
                   placeholder="tu@correo.com"
                 />
               </div>
@@ -120,7 +147,7 @@ export default function Contact() {
                 <label htmlFor="tour" className="block font-sans text-sm text-sand/80 uppercase tracking-widest mb-2 font-bold">Interesado En</label>
                 <select 
                   id="tour" 
-                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-coral transition-colors appearance-none font-light"
+                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-gold transition-colors appearance-none font-light"
                 >
                   <option value="" className="text-coffee-dark">Selecciona un Tour...</option>
                   <option value="graffiti" className="text-coffee-dark">Graffiti Tour</option>
@@ -143,14 +170,14 @@ export default function Contact() {
                 <textarea 
                   id="message" 
                   rows={4}
-                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-coral transition-colors resize-none font-light"
+                  className="w-full bg-white/5 border border-white/20 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-gold transition-colors resize-none font-light"
                   placeholder="Cuéntanos sobre tu viaje..."
                 ></textarea>
               </div>
 
               <button 
                 type="submit"
-                className="w-full bg-coral text-white py-5 rounded-full uppercase tracking-widest font-bold text-lg hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,142,101,0.5)] flex items-center justify-center gap-3 group mt-8"
+                className="w-full bg-coral text-coffee-dark py-5 rounded-full uppercase tracking-widest font-bold text-lg hover:bg-coral-light transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(240,201,12,0.5)] flex items-center justify-center gap-3 group mt-8"
               >
                 <span className="relative z-10">Enviar Mensaje</span>
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
