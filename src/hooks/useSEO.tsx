@@ -19,7 +19,7 @@ export function useSEO({
   schema,
 }: UseSEOProps) {
   const SEOTags = useMemo(() => (
-    <Helmet>
+    <>
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
@@ -44,7 +44,7 @@ export function useSEO({
           {JSON.stringify(schema)}
         </script>
       )}
-    </Helmet>
+    </>
   ), [title, description, keywords, url, image, schema]);
 
   return SEOTags;

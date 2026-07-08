@@ -31,20 +31,21 @@ const routesToPrerender = [...staticRoutes, ...tourRoutes];
 
 (async () => {
   for (const url of routesToPrerender) {
-    const { html: appHtml, helmet } = render(url);
+    const { html: rawHtml } = render(url);
     
-    let metaTags = '';
-    if (helmet) {
-      metaTags = `
-        ${helmet.title ? helmet.title.toString() : ''}
-        ${helmet.meta ? helmet.meta.toString() : ''}
-        ${helmet.link ? helmet.link.toString() : ''}
-        ${helmet.script ? helmet.script.toString() : ''}
-      `;
+    // In React 19, `renderToString` prepends hoisted tags (like <title>, <meta>) to the output string.
+    // Our App's root element starts with `<div className="min-h-screen`.
+    const firstDivIndex = rawHtml.indexOf('<div class="min-h-screen');
+    let headTags = '';
+    let appHtml = rawHtml;
+    
+    if (firstDivIndex > 0) {
+      headTags = rawHtml.substring(0, firstDivIndex);
+      appHtml = rawHtml.substring(firstDivIndex);
     }
-
+    
     const html = template
-      .replace(`<!--app-head-->`, metaTags)
+      .replace(`<!--app-head-->`, headTags)
       .replace(`<!--app-html-->`, appHtml);
 
     const filePath = url === '/' 
