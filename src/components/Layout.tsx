@@ -160,7 +160,7 @@ export default function Layout() {
         </div>
         
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center font-sans text-sm text-sand/60">
-          <p>&copy; {new Date().getFullYear()} Emilio's Tours Medellín. Todos los derechos reservados.</p>
+          <p>&copy; 2026 Emilio's Tours Medellín. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
