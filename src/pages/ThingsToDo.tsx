@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 
 const activities = [
@@ -53,14 +53,16 @@ export default function ThingsToDo() {
   const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
+  const seo = useSEO({
+    title: "Qué Hacer en Medellín | Principales Atracciones y Tours",
+    description: "Descubre las mejores cosas para hacer en Medellín, Colombia. Desde viajar en el Metrocable y explorar la Comuna 13 hasta excursiones de un día a Guatapé y fincas cafeteras.",
+    keywords: "qué hacer en Medellín, atracciones en Medellín, city tour Medellín, Comuna 13, Guatapé",
+    url: "https://emiliostours.com/things-to-do-medellin"
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
-      <SEO 
-        title="Qué Hacer en Medellín | Principales Atracciones y Tours"
-        description="Descubre las mejores cosas para hacer en Medellín, Colombia. Desde viajar en el Metrocable y explorar la Comuna 13 hasta excursiones de un día a Guatapé y fincas cafeteras."
-        keywords="qué hacer en Medellín, atracciones en Medellín, city tour Medellín, Comuna 13, Guatapé"
-        url="https://emiliostours.com/things-to-do-medellin"
-      />
+      {seo}
 
       {/* Decorative Elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
@@ -42,14 +42,16 @@ export default function FAQ() {
   const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
+  const seo = useSEO({
+    title: "Preguntas Frecuentes | Emilio's Tours Medellín",
+    description: "Encuentra respuestas a las preguntas frecuentes sobre los tours en Medellín, incluyendo la seguridad en la Comuna 13, la duración del tour a Guatapé y qué llevar.",
+    keywords: "FAQ tours Medellín, Comuna 13 seguro, duración tour Guatapé, tours privados Medellín",
+    url: "https://emiliostours.com/faq"
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
-      <SEO 
-        title="Preguntas Frecuentes | Emilio's Tours Medellín"
-        description="Encuentra respuestas a las preguntas frecuentes sobre los tours en Medellín, incluyendo la seguridad en la Comuna 13, la duración del tour a Guatapé y qué llevar."
-        keywords="FAQ tours Medellín, Comuna 13 seguro, duración tour Guatapé, tours privados Medellín"
-        url="https://emiliostours.com/faq"
-      />
+      {seo}
 
       {/* Decorative Elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">

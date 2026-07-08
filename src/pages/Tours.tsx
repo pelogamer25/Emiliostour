@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import TourCard from '../components/TourCard';
 import { tours } from '../data/tours';
 
@@ -15,14 +15,16 @@ export default function Tours() {
   const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
+  const seo = useSEO({
+    title: "Los Mejores Tours y Experiencias | Agencia de Turismo en Medellín | Emilio's Tours",
+    description: "Explora nuestra gama completa de tours en Medellín. Somos tu Agencia de Turismo en Medellín. Desde la vibrante Comuna 13 hasta el impresionante Guatapé y El Peñol.",
+    keywords: "Agencia de Turismo en Medellín, Tours en Medellín, Comuna 13 tour, Guatapé tour, Pablo Escobar tour Medellín, tour cafetero Medellín, tours privados Medellín, city tour Medellín",
+    url: "https://emiliostours.com/medellin-tours"
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
-      <SEO 
-        title="Los Mejores Tours y Experiencias en Medellín | Emilio's Tours"
-        description="Explora nuestra gama completa de tours en Medellín. Desde la vibrante Comuna 13 hasta el impresionante Guatapé y El Peñol. Reserva tu inolvidable aventura colombiana hoy."
-        keywords="Tours en Medellín, Comuna 13 tour, Guatapé tour, Pablo Escobar tour Medellín, tour cafetero Medellín, tours privados Medellín, city tour Medellín"
-        url="https://emiliostours.com/medellin-tours"
-      />
+      {seo}
 
       {/* Decorative background elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
@@ -73,12 +75,12 @@ export default function Tours() {
           transition={{ duration: 1 }}
           className="mt-32 max-w-4xl mx-auto glass bg-white/40 p-12 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-gold"
         >
-          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">¿Por qué reservar un tour en Medellín?</h2>
+          <h2 className="text-4xl font-bold text-coffee-dark mb-8 text-center">¿Por qué elegir nuestra Agencia de Turismo en Medellín?</h2>
           <p className="text-coffee/80 mb-6 font-light">
             Medellín, Colombia, a menudo conocida como la "Ciudad de la Eterna Primavera", es una metrópolis vibrante enclavada en el Valle de Aburrá. En las últimas dos décadas, ha experimentado una transformación milagrosa, convirtiéndose en uno de los destinos más innovadores y emocionantes de Sudamérica.
           </p>
           <p className="text-coffee/80 mb-6 font-light">
-            Nuestros <strong>tours en Medellín</strong> están diseñados para mostrar la increíble resiliencia de la ciudad, sus impresionantes paisajes y su cálida cultura. Desde explorar las coloridas calles en nuestro <strong>tour a la Comuna 13</strong> hasta escalar la enorme roca en nuestro <strong>tour a Guatapé</strong>, cada experiencia está diseñada para dejarte recuerdos inolvidables.
+            Como <strong>Agencia de Turismo en Medellín</strong> experta, nuestros <strong>tours en Medellín</strong> están diseñados para mostrar la increíble resiliencia de la ciudad, sus impresionantes paisajes y su cálida cultura. Desde explorar las coloridas calles en nuestro <strong>tour a la Comuna 13</strong> hasta escalar la enorme roca en nuestro <strong>tour a Guatapé</strong>, cada experiencia está diseñada para dejarte recuerdos inolvidables.
           </p>
           <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Opciones de Tours Populares</h3>
           <ul className="list-disc pl-6 space-y-4 text-coffee/80 font-light">

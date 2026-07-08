@@ -1,6 +1,7 @@
+import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-interface SEOProps {
+interface UseSEOProps {
   title: string;
   description: string;
   keywords?: string;
@@ -9,8 +10,15 @@ interface SEOProps {
   schema?: Record<string, any>;
 }
 
-export default function SEO({ title, description, keywords, url = 'https://emiliostours.com', image = 'https://picsum.photos/seed/medellin/1200/630', schema }: SEOProps) {
-  return (
+export function useSEO({
+  title,
+  description,
+  keywords,
+  url = 'https://emiliostours.com',
+  image = 'https://picsum.photos/seed/medellin/1200/630',
+  schema,
+}: UseSEOProps) {
+  const SEOTags = useMemo(() => (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -37,5 +45,7 @@ export default function SEO({ title, description, keywords, url = 'https://emili
         </script>
       )}
     </Helmet>
-  );
+  ), [title, description, keywords, url, image, schema]);
+
+  return SEOTags;
 }

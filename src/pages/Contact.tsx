@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
 export default function Contact() {
@@ -14,14 +14,16 @@ export default function Contact() {
   const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
+  const seo = useSEO({
+    title: "Contacto | Agencia de Turismo en Medellín | Emilio's Tours",
+    description: "Ponte en contacto con Emilio's Tours, tu Agencia de Turismo en Medellín. Estamos listos para ayudarte a planear tus excursiones y tours por Medellín y Colombia.",
+    keywords: "contacto Emilio's Tours, Agencia de Turismo en Medellín, reservar tour Medellín, agencia de viajes Medellín, tours privados",
+    url: "https://emiliostours.com/contact"
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
-      <SEO 
-        title="Contacto | Emilio's Tours Medellín"
-        description="Ponte en contacto con Emilio's Tours para reservar tu city tour por Medellín, la experiencia en la Comuna 13 o tu aventura privada colombiana."
-        keywords="contacto Emilio's Tours, reservar tour Medellín, agencia de viajes Medellín"
-        url="https://emiliostours.com/contact"
-      />
+      {seo}
 
       {/* Decorative Elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">

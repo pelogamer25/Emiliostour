@@ -14,24 +14,24 @@ export const tours: Tour[] = [
   {
     id: 'graffiti',
     slug: 'graffiti-tour-comuna-13',
-    title: 'Graffiti Tour',
+    title: 'Graffiti Tour – Comuna 13',
     tagline: 'Arte urbano, historia y transformación',
-    description: 'Recorrido guiado por los callejones y escaleras eléctricas de una de las comunas más representativas de Medellín. Un tour lleno de arte urbano, historia y transformación social.',
-    duration: '4 Horas (9:00 am - 1:00 pm)',
-    price: '$50 USD',
+    description: 'Conoce la transformación de la Comuna 13 a través de su arte urbano, la música y las historias que han convertido este lugar en uno de los destinos más visitados de Medellín.',
+    duration: '4 horas',
+    price: 'Consultar',
     image: 'https://picsum.photos/seed/comuna13/800/1200',
-    highlights: ['Helado de mango 🥭', 'Entrada Metro Cable', 'Transporte privado', 'Guía privado']
+    highlights: ['Transporte', 'Guía bilingüe', 'Ingreso al Metrocable', 'Paleta de mango biche']
   },
   {
     id: 'guatape',
     slug: 'tour-guatape',
-    title: 'Tour a Guatapé',
+    title: 'Tour Privado a Guatapé & Piedra del Peñol',
     tagline: 'La Piedra y el Pueblo Colorido',
-    description: 'Viaje terrestre de aproximadamente 1 hora y 40 minutos desde Medellín. Descubre uno de los paisajes más impresionantes de Colombia, sube la famosa Piedra del Peñol y recorre las calles llenas de zócalos coloridos.',
-    duration: 'Día Completo',
+    description: 'Disfruta de uno de los destinos más emblemáticos de Antioquia. Explora el colorido pueblo de Guatapé, navega por el embalse en bote y visita la famosa Piedra del Peñol mientras conoces paisajes espectaculares y la cultura de la región.',
+    duration: '7–8 horas',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/guatape/800/1200',
-    highlights: ['Visita granja de animales', 'Paseo en bote por el lago', 'Entrada Piedra del Peñol', 'Almuerzo, transporte y guía privado']
+    highlights: ['Transporte privado y guía bilingüe', 'Recorrido por Guatapé y visita a los zócalos', 'Paseo en bote por el embalse', 'Visita al Alto del Chocho y su granja (no incluye entrada a Piedra del Peñol)']
   },
   {
     id: 'cafe',
@@ -47,35 +47,35 @@ export const tours: Tour[] = [
   {
     id: 'parapente',
     slug: 'vuelo-parapente-medellin',
-    title: 'Vuelo en Parapente',
+    title: 'Tour de Parapente',
     tagline: 'Aventura en las alturas',
-    description: 'Vuela durante 18 minutos acompañado de un piloto profesional y disfruta de una vista espectacular desde el aire. Una experiencia llena de adrenalina y paisajes inolvidables. 📸 Recomendación: llevar cámara.',
-    duration: 'Medio Día (18 min de vuelo)',
+    description: 'Vive una experiencia llena de adrenalina mientras sobrevuelas los paisajes montañosos de Antioquia. Una actividad ideal para quienes desean disfrutar de vistas panorámicas inolvidables desde el aire. Recomendado entre 10:00 a.m. y 2:00 p.m.',
+    duration: 'Aprox. 4 horas (18 min vuelo)',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/paragliding/800/1200',
-    highlights: ['Vuelo de 18 minutos', 'Piloto profesional', 'Traslado al punto de vuelo', 'Vistas espectaculares']
+    highlights: ['Transporte', 'Guía bilingüe', 'Vuelo en parapente']
   },
   {
     id: 'cuatrimotos',
     slug: 'tour-cuatrimotos',
-    title: 'Aventura en Cuatrimotos',
+    title: 'Tour en Cuatrimoto',
     tagline: 'Adrenalina y naturaleza',
-    description: 'Recorre paisajes naturales mientras sientes la fuerza de los motores. Ideal para los amantes de la adrenalina y la aventura que buscan explorar los alrededores de Medellín de una forma diferente.',
-    duration: '1.5 Horas',
+    description: 'Recorre caminos rurales y disfruta de la naturaleza mientras conduces una cuatrimoto por senderos llenos de aventura cerca de Medellín. Una experiencia perfecta para quienes buscan emoción al aire libre.',
+    duration: '4 horas (1.5h recorrido)',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/atv/800/1200',
-    highlights: ['Recorrido por paisajes naturales', 'Motos de alta potencia', 'Guía experto', 'Adrenalina pura']
+    highlights: ['Transporte', 'Guía bilingüe', 'Cuatrimoto', 'Recorrido guiado']
   },
   {
     id: 'ebike',
     slug: 'tour-bicicleta-electrica',
     title: 'Tour en Bicicleta Eléctrica',
     tagline: 'Explora la ciudad sin esfuerzo',
-    description: 'Explora la ciudad de una manera diferente y divertida. Recorrido por 12 parques principales de Medellín, sin esfuerzo físico gracias a las bicicletas eléctricas.',
-    duration: 'Medio Día',
+    description: 'Recorre Medellín de una forma divertida y sostenible mientras visitas algunos de los parques y espacios más representativos de la ciudad en bicicleta eléctrica.',
+    duration: '3 horas',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/ebike/800/1200',
-    highlights: ['12 parques principales', 'Bicicletas eléctricas', 'Guía local', 'Recorrido divertido y ecológico']
+    highlights: ['Bicicleta eléctrica', 'Guía bilingüe', 'Recorrido de aprox. 16 km', 'Visita a 12 parques (no incluye transporte al punto de encuentro)']
   },
   {
     id: 'escobar',
@@ -113,23 +113,23 @@ export const tours: Tour[] = [
   {
     id: 'trekking',
     slug: 'trekking-envigado',
-    title: 'Trekking Envigado',
+    title: 'Trekking en Envigado',
     tagline: 'Caminata ecológica',
-    description: 'Caminata ecológica en el sur de la ciudad. Un plan ideal para los amantes del deporte, la aventura y el aire libre, explorando los senderos verdes de Envigado.',
-    duration: 'Medio Día',
+    description: 'Conéctate con la naturaleza a través de una caminata por senderos ecológicos rodeados de montañas, bosques y quebradas. Una experiencia ideal para quienes desean disfrutar del aire libre y descubrir los paisajes naturales del Valle de Aburrá.',
+    duration: '4 horas',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/trekking/800/1200',
-    highlights: ['Sur de la ciudad (Envigado)', 'Naturaleza pura', 'Deporte y aventura', 'Guía de montaña']
+    highlights: ['Transporte', 'Guía bilingüe', 'Snack', 'Caminata guiada por senderos naturales']
   },
   {
     id: 'gastronomico',
     slug: 'tour-gastronomico',
-    title: 'Tour Gastronómico',
+    title: 'Tour Gastronómico de Medellín',
     tagline: 'Sabores de Colombia',
-    description: 'Visita a una plaza de mercado tradicional, degustación de frutas exóticas y almuerzo típico colombiano, incluyendo postre. Descubre la riqueza culinaria de nuestra región.',
-    duration: 'Medio Día',
+    description: 'Descubre los sabores más auténticos de Medellín en una experiencia diseñada para los amantes de la gastronomía. Recorre la Plaza Minorista acompañado por un guía bilingüe, conoce la cultura local y disfruta de una degustación de frutas exóticas, un delicioso almuerzo tradicional y un postre típico.',
+    duration: '4 horas',
     price: 'Consultar',
     image: 'https://picsum.photos/seed/food/800/1200',
-    highlights: ['Plaza de mercado tradicional', 'Degustación de frutas exóticas', 'Almuerzo típico colombiano', 'Postre incluido']
+    highlights: ['Transporte ida y regreso', 'Guía privado bilingüe', 'Recorrido por la Plaza Minorista', 'Degustación de frutas exóticas, almuerzo y postre']
   }
 ];

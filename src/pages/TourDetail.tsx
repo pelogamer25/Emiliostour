@@ -1,7 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import { tours } from '../data/tours';
 import { Clock, DollarSign, CheckCircle2, ArrowLeft, Calendar } from 'lucide-react';
 
@@ -23,30 +23,32 @@ export default function TourDetail() {
     return <Navigate to="/medellin-tours" replace />;
   }
 
+  const seo = useSEO({
+    title: `${tour.title} | Agencia de Turismo en Medellín | Emilio's Tours`,
+    description: tour.description,
+    keywords: `${tour.title}, ${tour.slug.replace(/-/g, ' ')}, Agencia de Turismo en Medellín, Tours en Medellín, Colombia`,
+    url: `https://emiliostours.com/${tour.slug}`,
+    image: tour.image,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": tour.title,
+      "description": tour.description,
+      "provider": {
+        "@type": "TourAgency",
+        "name": "Emilio's Tours"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": tour.price.replace(/[^0-9.]/g, ''),
+        "priceCurrency": "USD"
+      }
+    }
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen">
-      <SEO 
-        title={`${tour.title} | Emilio's Tours Medellín`}
-        description={tour.description}
-        keywords={`${tour.title}, ${tour.slug.replace(/-/g, ' ')}, Tours en Medellín, Colombia`}
-        url={`https://emiliostours.com/${tour.slug}`}
-        image={tour.image}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "TouristTrip",
-          "name": tour.title,
-          "description": tour.description,
-          "provider": {
-            "@type": "TourAgency",
-            "name": "Emilio's Tours"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": tour.price.replace(/[^0-9.]/g, ''),
-            "priceCurrency": "USD"
-          }
-        }}
-      />
+      {seo}
 
       {/* Decorative Elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">

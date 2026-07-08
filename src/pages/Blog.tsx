@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
@@ -72,14 +72,16 @@ export default function Blog() {
   const yBlob2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xText = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
+  const seo = useSEO({
+    title: "Blog de Viajes | Emilio's Tours Medellín",
+    description: "Lee nuestros últimos artículos sobre qué hacer en Medellín, consejos de viaje, historia, cultura y gastronomía colombiana.",
+    keywords: "blog Medellín, consejos viaje Medellín, historia Comuna 13, comida típica Antioquia",
+    url: "https://emiliostours.com/blog"
+  });
+
   return (
     <div ref={containerRef} className="bg-beige min-h-screen pt-32 pb-24 px-6 relative overflow-hidden">
-      <SEO 
-        title="Blog de Viajes | Emilio's Tours Medellín"
-        description="Lee nuestros últimos artículos sobre qué hacer en Medellín, consejos de viaje, historia, cultura y gastronomía colombiana."
-        keywords="blog Medellín, consejos viaje Medellín, historia Comuna 13, comida típica Antioquia"
-        url="https://emiliostours.com/blog"
-      />
+      {seo}
 
       {/* Decorative Elements */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">

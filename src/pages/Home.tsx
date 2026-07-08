@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import { useSEO } from '../hooks/useSEO';
 import TourCard from '../components/TourCard';
 import { tours } from '../data/tours';
 import { Compass, MapPin, Star, Plane } from 'lucide-react';
@@ -30,26 +30,28 @@ export default function Home() {
   const xTextLeft = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const xTextRight = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
+  const seo = useSEO({
+    title: "Agencia de Turismo en Medellín | Emilio's Tours | Mejores Tours en Colombia",
+    description: "Emilio's Tours, tu Agencia de Turismo en Medellín líder. Experimenta la magia de Medellín con nuestros tours a la Comuna 13, Guatapé y tours privados por la ciudad. Más que tours, vendemos sueños.",
+    keywords: "Agencia de Turismo en Medellín, Tours en Medellín, mejores tours Medellín, Comuna 13 tour, Guatapé tour, tour privado Medellín, agencia de viajes medellin",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "TourAgency",
+      "name": "Emilio's Tours",
+      "description": "Experiencia turística galardonada en Medellín, Colombia.",
+      "url": "https://emiliostours.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "CO"
+      }
+    }
+  });
+
   return (
     <div ref={containerRef} className="relative min-h-screen">
-      <SEO 
-        title="Emilio's Tours | Los Mejores Tours en Medellín, Colombia"
-        description="Experimenta la magia de Medellín con Emilio's Tours. Ofrecemos los mejores tours a la Comuna 13, Guatapé y tours privados por la ciudad. Más que tours, vendemos sueños."
-        keywords="Tours en Medellín, mejores tours Medellín, Comuna 13 tour, Guatapé tour, tour privado Medellín, qué hacer en Medellín"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "TourAgency",
-          "name": "Emilio's Tours",
-          "description": "Experiencia turística galardonada en Medellín, Colombia.",
-          "url": "https://emiliostours.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Medellín",
-            "addressRegion": "Antioquia",
-            "addressCountry": "CO"
-          }
-        }}
-      />
+      {seo}
 
       {/* Continuous Animated Background */}
       <div className="fixed inset-0 z-[-1] overflow-hidden bg-beige pointer-events-none">
@@ -261,9 +263,9 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="max-w-4xl mx-auto glass bg-white/30 p-12 md:p-16 rounded-[3rem] prose prose-lg prose-headings:font-display prose-p:font-sans prose-a:text-gold"
         >
-          <h2 className="text-4xl font-bold text-coffee-dark mb-6">¿Por qué elegir Emilio's Tours en Medellín?</h2>
+          <h2 className="text-4xl font-bold text-coffee-dark mb-6">Tu Agencia de Turismo en Medellín - Emilio's Tours</h2>
           <p className="text-coffee/80 mb-4 font-light text-xl leading-relaxed">
-            Al buscar los <strong>mejores tours en Medellín</strong>, los viajeros buscan autenticidad, seguridad y un profundo conocimiento local. En Emilio's Tours, nos enorgullecemos de ofrecer los <strong>city tours en Medellín</strong> más completos y atractivos disponibles.
+            Como <strong>Agencia de Turismo en Medellín</strong> de confianza, sabemos que al buscar los <strong>mejores tours en Medellín</strong>, los viajeros buscan autenticidad, seguridad y un profundo conocimiento local. En Emilio's Tours, nos enorgullecemos de ofrecer los <strong>city tours en Medellín</strong> más completos y atractivos disponibles en toda Colombia.
           </p>
           <h3 className="text-3xl font-bold text-coffee-dark mt-12 mb-6">Las Mejores Cosas para Hacer en Medellín</h3>
           <p className="text-coffee/80 mb-4 font-light text-xl leading-relaxed">
